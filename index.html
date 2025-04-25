@@ -1,116 +1,40 @@
 <!DOCTYPE html>
-<html lang="ku">
+<html lang="ku" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فۆڕمی لۆگین</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-         
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-shadow: 0px 0px 10px 0px red;
-           
-            margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #8e1115, #fad0c4, #fbc2eb, #a6c1ee, #fbc2eb); /* رەنگاو رەنگی هێڵی */
-        background-size: 400% 400%; /* گەورەکردنی باکگراوندەکە */
-        animation: gradientBG 15s ease infinite; /* ئەنیمەیشن */
-        text-align: right;
-            
-            
-
-        }
-
-        .login-container {
-            background-color: #fff;
-            padding: 20px 40px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 20px 0px red;
-            
-            width: 300px;
-            text-align: center;
-        }
-
-        .login-container h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .login-container input[type="text"],
-        .login-container input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #000000;
-            border-radius: 4px;
-            font-size: 16px;
-            text-align: right;
-            box-shadow: 0px 0px 40px 0px rgb(202, 5, 5);
-        }
-
-        .login-container input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #28a745;
-            border: none;
-            border-radius: 4px;
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .login-container input[type="submit"]:hover {
-            background-color: #218838;
-        }
-
-        .login-container .error-message {
-            color: red;
-            margin-top: 10px;
-        }
-        img{
-          border-radius: 400px;
-        }
-    </style>
+    <title>سیستەمی وێنە و نرخ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div class="login-container">
-        <img src="sa.jpg" alt="">
-        <h2>کۆلێژی کارگێری و ئابووری</h2>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="ناوی بەکارهێنەر" required>
-            <input type="password" id="password" placeholder="پاسوۆرد" required>
-            <input type="submit" value="چوونەژوورەوە">
-        </form>
-        <p class="error-message" id="errorMessage"></p>
+    <div class="container">
+        <header>
+            <h1>سیستەمی وێنە و نرخ</h1>
+            <p>وێنە لە کۆمپیوتەر باربکە و نرخی بنووسە</p>
+        </header>
+        
+        <div class="input-section">
+            <div class="input-group">
+                <label for="photo-upload">وێنە هەڵبژێرە:</label>
+                <input type="file" id="photo-upload" accept="image/*">
+            </div>
+            <div class="input-group">
+                <label for="photo-price">نرخی وێنە:</label>
+                <input type="text" id="photo-price" placeholder="نرخی وێنە...">
+            </div>
+            <button id="add-btn">
+                <span>+</span> وێنەی نوێ زیاد بکە
+            </button>
+        </div>
+        
+        <div class="gallery" id="photo-gallery">
+            <!-- وێنەکان لێرە دەردەکەون -->
+        </div>
     </div>
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-
-            // نموونەی یوزەر و پاسوۆرد
-            var correctUsername = "abdulkhalq";
-            var correctPassword = "kuy";
-
-            if (username === correctUsername && password === correctPassword) {
-                // ئەگەر یوزەر و پاسوۆرد ڕاست بوو، بچۆ بۆ وێبسایتەکە
-                window.location.href = "ss.html";
-            } else {
-                // ئەگەر یوزەر یان پاسوۆرد هەڵە بوو، هەڵە نیشان بدە
-                document.getElementById('errorMessage').textContent = "ناوی بەکارهێنەر یان پاسوۆرد هەڵەیە!";
-            }
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
